@@ -60,7 +60,7 @@ namespace Giacomo
 
 
         private float m_value;
-        [ShowInInspector, ReadOnly, HorizontalGroup("Values"), LabelText("Current")]
+        [ShowInInspector, ReadOnly, HorizontalGroup("Values"), LabelText("Current"), LabelWidth(48)]
         public float Value { 
             get { if (!isInitialized) Initialize(); 
                 return m_value; } 

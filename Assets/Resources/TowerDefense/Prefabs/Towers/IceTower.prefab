@@ -62,7 +62,7 @@ GameObject:
   - component: {fileID: -1293504078115593503}
   - component: {fileID: 3635735975561972143}
   m_Layer: 0
-  m_Name: SlowTower
+  m_Name: IceTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,13 +99,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sortOrder: 0
   effects: {fileID: 0}
-  towerName: Freeze
-  towerDescription: Slows enemies in an area.
-  cost: 100
-  placingPreview: {fileID: 6740741442962960701, guid: 58437be6c97c11b4c938fc8f5c4cdf84, type: 3}
   shopIcon: {fileID: 6740741442962960701, guid: 58437be6c97c11b4c938fc8f5c4cdf84, type: 3}
-  b_maxRange: 3
-  b_minRange: 0
+  towerName: Ice
+  towerDescription: Slows enemies in an area.
   Cost:
     m_name: 
     m_baseValue: 100
@@ -134,11 +130,6 @@ MonoBehaviour:
     m_minValue: 0
     m_maxValue: 3.4028235e+38
   placeSoundVolume: 0.5
-  scaleWithMaxRange:
-  - {fileID: 7507854840275013784}
-  scaleWithMinRange: []
-  minRangeIndicator: {fileID: 0}
-  maxRangeIndicator: {fileID: 0}
   cannon: {fileID: 1999829596359873009}
   attackAngleThreshold: 360
   rotateTowardsTarget: 0

@@ -49,13 +49,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sortOrder: 0
   effects: {fileID: 0}
+  shopIcon: {fileID: 5045188630873096290, guid: 8901a8cc285876e48b882143dec27bd8, type: 3}
   towerName: Boost
   towerDescription: Boosts the range and attack speed of adjacent towers.
-  cost: 100
-  placingPreview: {fileID: 5045188630873096290, guid: 8901a8cc285876e48b882143dec27bd8, type: 3}
-  shopIcon: {fileID: 5045188630873096290, guid: 8901a8cc285876e48b882143dec27bd8, type: 3}
-  b_maxRange: 0
-  b_minRange: 0
   Cost:
     m_name: 
     m_baseValue: 100
@@ -84,10 +80,6 @@ MonoBehaviour:
     m_minValue: 0
     m_maxValue: 0
   placeSoundVolume: 0.5
-  scaleWithMaxRange: []
-  scaleWithMinRange: []
-  minRangeIndicator: {fileID: 0}
-  maxRangeIndicator: {fileID: 0}
   modifierName: attackSpeedBoostTower
   buffs:
   - stat: attackSpeed
@@ -280,7 +272,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -723450557
+  m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 2024558033217508813, guid: c99976373a4233e42aef01bed929c257, type: 3}
@@ -448,6 +440,6 @@ SpriteRenderer:
   m_Size: {x: 0.8, y: 0.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0

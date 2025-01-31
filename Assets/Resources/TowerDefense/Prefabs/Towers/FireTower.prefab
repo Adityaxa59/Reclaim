@@ -50,14 +50,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sortOrder: 0
   effects: {fileID: 0}
+  shopIcon: {fileID: -3495968029663358996, guid: 58437be6c97c11b4c938fc8f5c4cdf84, type: 3}
   towerName: Flamethrower
   towerDescription: Fires in the direction of an enemy, damaging and burning enemies
     over time after they're hit.
-  cost: 150
-  placingPreview: {fileID: -3495968029663358996, guid: 58437be6c97c11b4c938fc8f5c4cdf84, type: 3}
-  shopIcon: {fileID: -3495968029663358996, guid: 58437be6c97c11b4c938fc8f5c4cdf84, type: 3}
-  b_maxRange: 2.2
-  b_minRange: 0
   Cost:
     m_name: 
     m_baseValue: 150
@@ -86,11 +82,6 @@ MonoBehaviour:
     m_minValue: 0
     m_maxValue: 3.4028235e+38
   placeSoundVolume: 0.5
-  scaleWithMaxRange:
-  - {fileID: 2759899366994034821}
-  scaleWithMinRange: []
-  minRangeIndicator: {fileID: 0}
-  maxRangeIndicator: {fileID: 0}
   cannon: {fileID: 8711475530282827606}
   attackAngleThreshold: 360
   rotateTowardsTarget: 1
@@ -226,7 +217,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2047992552024771149}
   - component: {fileID: 5388919577865201616}
-  - component: {fileID: 6539731071336707056}
   m_Layer: 0
   m_Name: Base
   m_TagString: Untagged
@@ -304,59 +294,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6539731071336707056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4200971711654879236}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShadowGroup: 0
-  m_Priority: 0
-  m_ComponentVersion: 5
-  m_HasRenderer: 1
-  m_UseRendererSilhouette: 1
-  m_CastsShadows: 1
-  m_SelfShadows: 0
-  m_AlphaCutoff: 0.1
-  m_ApplyToSortingLayers: 231a18dc00000000f7db97a58599d5a8
-  m_ShapePath:
-  - {x: -0.2220873, y: -0.38112786, z: 0}
-  - {x: -0.29021615, y: -0.13751559, z: 0}
-  - {x: -0.077956766, y: 0.34136775, z: 0}
-  - {x: 0.18232718, y: 0.26681742, z: 0}
-  - {x: 0.20717707, y: -0.38112792, z: 0}
-  m_ShapePathHash: -1725912949
-  m_InstanceId: 0
-  m_ShadowShape2DComponent: {fileID: 0}
-  m_ShadowShape2DProvider:
-    rid: -2
-  m_ShadowCastingSource: 1
-  m_ShadowMesh:
-    m_Mesh: {fileID: 0}
-    m_LocalBounds:
-      m_Center: {x: -0.041519538, y: -0.019880086, z: 0}
-      m_Extent: {x: 0.24869661, y: 0.36124784, z: 0}
-    m_EdgeProcessing: 1
-    m_TrimEdge: 0.04
-    m_FlipX: 0
-    m_FlipY: 0
-    m_InitialTrim: 0
-  m_CastingOption: 1
-  m_PreviousTrimEdge: 0.04
-  m_PreviousEdgeProcessing: 1
-  m_PreviousShadowCastingSource: 1
-  m_PreviousShadowShape2DSource: {fileID: 5388919577865201616}
-  references:
-    version: 2
-    RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
 --- !u!1 &4340460908074918391
 GameObject:
   m_ObjectHideFlags: 0
@@ -367,6 +304,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1064000223984385472}
   - component: {fileID: 2365422719003469884}
+  - component: {fileID: 1477667388045380975}
   m_Layer: 0
   m_Name: Cannon
   m_TagString: Untagged
@@ -432,7 +370,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -3495968029663358996, guid: 58437be6c97c11b4c938fc8f5c4cdf84, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -444,6 +382,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1477667388045380975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4340460908074918391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_Priority: 1
+  m_ComponentVersion: 5
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_AlphaCutoff: 0.1
+  m_ApplyToSortingLayers: 231a18dc00000000f7db97a58599d5a8
+  m_ShapePath:
+  - {x: -0.061547644, y: -0.093859725, z: 0}
+  - {x: -0.22022076, y: 0.1865672, z: 0}
+  - {x: -0.061157852, y: 0.34634382, z: 0}
+  - {x: -0.12409219, y: 0.15871906, z: 0}
+  - {x: 0.0005700793, y: 0.056353986, z: 0}
+  - {x: 0.12570657, y: 0.16064055, z: 0}
+  - {x: 0.063182145, y: 0.34308836, z: 0}
+  - {x: 0.22313458, y: 0.18209507, z: 0}
+  - {x: 0.06342437, y: -0.09378778, z: 0}
+  m_ShapePathHash: 1629227358
+  m_InstanceId: 0
+  m_ShadowShape2DComponent: {fileID: 0}
+  m_ShadowShape2DProvider:
+    rid: -2
+  m_ShadowCastingSource: 1
+  m_ShadowMesh:
+    m_Mesh: {fileID: 0}
+    m_LocalBounds:
+      m_Center: {x: 0.0014569014, y: 0.12624204, z: 0}
+      m_Extent: {x: 0.22167766, y: 0.22010177, z: 0}
+    m_EdgeProcessing: 1
+    m_TrimEdge: 0.04
+    m_FlipX: 0
+    m_FlipY: 0
+    m_InitialTrim: 0
+  m_CastingOption: 1
+  m_PreviousTrimEdge: 0.04
+  m_PreviousEdgeProcessing: 1
+  m_PreviousShadowCastingSource: 1
+  m_PreviousShadowShape2DSource: {fileID: 5388919577865201616}
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
 --- !u!1 &4702356702462666771
 GameObject:
   m_ObjectHideFlags: 0
