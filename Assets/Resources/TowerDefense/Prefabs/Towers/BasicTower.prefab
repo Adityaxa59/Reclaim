@@ -57,7 +57,7 @@ MonoBehaviour:
     m_baseValue: 50
     min: 1
     max: 0
-    tempMin: 0
+    tempMin: 71.5
     tempMax: 0
     m_minValue: 0
     m_maxValue: 3.4028235e+38

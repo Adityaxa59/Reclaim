@@ -61,7 +61,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1752127049823460849}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -83,14 +83,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sortOrder: 0
   effects: {fileID: 0}
+  shopIcon: {fileID: -1206269037, guid: 58437be6c97c11b4c938fc8f5c4cdf84, type: 3}
   towerName: Stun
   towerDescription: Damages nearby enemies, and has a chance to stun them for a short
     time.
-  cost: 75
-  placingPreview: {fileID: 8369671016727015521, guid: 8901a8cc285876e48b882143dec27bd8, type: 3}
-  shopIcon: {fileID: 8369671016727015521, guid: 8901a8cc285876e48b882143dec27bd8, type: 3}
-  b_maxRange: 1.5
-  b_minRange: 0
   Cost:
     m_name: 
     m_baseValue: 75
@@ -119,11 +115,6 @@ MonoBehaviour:
     m_minValue: 0
     m_maxValue: 3.4028235e+38
   placeSoundVolume: 0.5
-  scaleWithMaxRange:
-  - {fileID: 6860416667821647265}
-  scaleWithMinRange: []
-  minRangeIndicator: {fileID: 0}
-  maxRangeIndicator: {fileID: 0}
   cannon: {fileID: 4493684489330958133}
   attackAngleThreshold: 360
   rotateTowardsTarget: 0
@@ -175,6 +166,7 @@ MonoBehaviour:
     m_minValue: 0
     m_maxValue: 1
   impactEffect: {fileID: 6860416667821647265}
+  attackAnim: {fileID: 8188984228591476307}
 --- !u!61 &-3436987236222513301
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -324,12 +316,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 8369671016727015521, guid: 8901a8cc285876e48b882143dec27bd8, type: 3}
+  m_Sprite: {fileID: -1206269037, guid: 58437be6c97c11b4c938fc8f5c4cdf84, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.8, y: 0.8}
+  m_Size: {x: 0.75, y: 0.75}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -485,8 +477,8 @@ SpriteRenderer:
   m_SortingLayerID: -2074815467
   m_SortingLayer: -1
   m_SortingOrder: 5
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 0.047058824}
+  m_Sprite: {fileID: 4090593692311021166, guid: 858f24dd79312e349b4ffc0f34eaa65a, type: 3}
+  m_Color: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 0.011764706}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1001,6 +993,7 @@ GameObject:
   - component: {fileID: 2582788144692714883}
   - component: {fileID: 9100246897032794653}
   - component: {fileID: 7888040422369175824}
+  - component: {fileID: 8188984228591476307}
   m_Layer: 0
   m_Name: Cannon
   m_TagString: Untagged
@@ -1067,15 +1060,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -784377547, guid: 58437be6c97c11b4c938fc8f5c4cdf84, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.53333336, y: 0.73333335}
+  m_Size: {x: 0.75, y: 0.75}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &9100246897032794653
@@ -1141,10 +1134,32 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8978793624578536663}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 36c28bc606245e44ab2c175062847fd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 50
   offset: 0
+--- !u!95 &8188984228591476307
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8978793624578536663}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 272c70fff7085a44f90b588eb59a94c2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

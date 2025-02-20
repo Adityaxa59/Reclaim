@@ -211,7 +211,7 @@ TextureImporter:
       name: Towers_2
       rect:
         serializedVersion: 2
-        x: 33
+        x: 30
         y: 230
         width: 24
         height: 24
@@ -233,7 +233,7 @@ TextureImporter:
       name: Towers_3
       rect:
         serializedVersion: 2
-        x: 33
+        x: 30
         y: 203
         width: 24
         height: 24
@@ -255,7 +255,7 @@ TextureImporter:
       name: Towers_4
       rect:
         serializedVersion: 2
-        x: 63
+        x: 57
         y: 230
         width: 24
         height: 24
@@ -277,7 +277,7 @@ TextureImporter:
       name: Towers_5
       rect:
         serializedVersion: 2
-        x: 63
+        x: 57
         y: 203
         width: 24
         height: 24
@@ -299,7 +299,7 @@ TextureImporter:
       name: Towers_6
       rect:
         serializedVersion: 2
-        x: 93
+        x: 84
         y: 230
         width: 24
         height: 24
@@ -321,7 +321,7 @@ TextureImporter:
       name: Towers_7
       rect:
         serializedVersion: 2
-        x: 93
+        x: 84
         y: 203
         width: 24
         height: 24
@@ -343,7 +343,7 @@ TextureImporter:
       name: Towers_8
       rect:
         serializedVersion: 2
-        x: 123
+        x: 111
         y: 230
         width: 24
         height: 24
@@ -365,7 +365,7 @@ TextureImporter:
       name: Towers_9
       rect:
         serializedVersion: 2
-        x: 123
+        x: 111
         y: 203
         width: 24
         height: 24
@@ -387,7 +387,7 @@ TextureImporter:
       name: Towers_10
       rect:
         serializedVersion: 2
-        x: 153
+        x: 138
         y: 230
         width: 24
         height: 24
@@ -409,7 +409,7 @@ TextureImporter:
       name: Towers_11
       rect:
         serializedVersion: 2
-        x: 153
+        x: 138
         y: 203
         width: 24
         height: 24
@@ -453,7 +453,7 @@ TextureImporter:
       name: Towers_13
       rect:
         serializedVersion: 2
-        x: 43
+        x: 40
         y: 185
         width: 4
         height: 6
@@ -475,7 +475,7 @@ TextureImporter:
       name: Towers_14
       rect:
         serializedVersion: 2
-        x: 69
+        x: 63
         y: 176
         width: 14
         height: 24
@@ -497,7 +497,7 @@ TextureImporter:
       name: Towers_16
       rect:
         serializedVersion: 2
-        x: 134
+        x: 122
         y: 187
         width: 2
         height: 3
@@ -519,7 +519,7 @@ TextureImporter:
       name: Towers_17
       rect:
         serializedVersion: 2
-        x: 164
+        x: 149
         y: 185
         width: 2
         height: 7
@@ -533,6 +533,138 @@ TextureImporter:
       bones: []
       spriteID: eb4d33c60693a6f70800000000000000
       internalID: 9181213876643157182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StunBase
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 230
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88e91c877a1aba24798eaddb791e7554
+      internalID: -1206269037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StunAnim1
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 230
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 248b14301bf8e2646a83324adfac27a5
+      internalID: -1408623032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StunAnim2
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 203
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b7422ba7bd42164fa497111d9c34d7d
+      internalID: -875105382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StunAnim3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 203
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a155bef38bca5b248b7e95630cd69d12
+      internalID: 1101257298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StunAnim4
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 176
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91f4a4a62c675e14b9f1b671c22a9eb8
+      internalID: 2016911212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StunAnim5
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 176
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07026aee980ca874ea6cf23aafc80e14
+      internalID: -784377547
       vertices: []
       indices: 
       edges: []
@@ -551,6 +683,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      StunAnim1: -1408623032
+      StunAnim2: -875105382
+      StunAnim3: 1101257298
+      StunAnim4: 2016911212
+      StunAnim5: -784377547
+      StunBase: 3920039315935209100
       Towers_0: -6164834272971422932
       Towers_1: 6740741442962960701
       Towers_10: 8827123467628282764
@@ -558,7 +696,6 @@ TextureImporter:
       Towers_12: -2547136823575072218
       Towers_13: -1110856070013635414
       Towers_14: -7787868209760199401
-      Towers_15: 3920039315935209100
       Towers_16: 1628593483751695657
       Towers_17: 9181213876643157182
       Towers_2: -2545511984063369323

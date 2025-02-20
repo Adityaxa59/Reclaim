@@ -9,6 +9,7 @@ namespace Giacomo
         public Stat StunChance;
 
         public Transform impactEffect;
+        [SerializeField] Animator attackAnim;
 
         public override Stats GetStats()
         {
@@ -42,6 +43,8 @@ namespace Giacomo
         //does not work with high fire rates. to fix I'd need to increase the animation speed (but this is fine for now)
         protected IEnumerator AttackEffect()
         {
+            attackAnim.SetTrigger("attack");
+            attackAnim.speed = AttackSpeed;
             impactEffect.gameObject.SetActive(true);
             yield return Helpers.GetWait(0.2f);
             impactEffect.gameObject.SetActive(false);
