@@ -94,7 +94,7 @@ MonoBehaviour:
     m_maxValue: 3.4028235e+38
   Damage:
     m_name: 
-    m_baseValue: 5
+    m_baseValue: 8
     min: 1
     max: 0
     tempMin: 0
@@ -103,7 +103,7 @@ MonoBehaviour:
     m_maxValue: 3.4028235e+38
   AttackSpeed:
     m_name: 
-    m_baseValue: 2
+    m_baseValue: 1
     min: 1
     max: 0
     tempMin: 0
@@ -129,7 +129,7 @@ MonoBehaviour:
     m_maxValue: 3.4028235e+38
   SplashDamageArea:
     m_name: 
-    m_baseValue: 0.75
+    m_baseValue: 0.8
     min: 1
     max: 0
     tempMin: 0

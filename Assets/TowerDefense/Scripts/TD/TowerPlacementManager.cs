@@ -124,6 +124,10 @@ namespace Giacomo
             //Range preview
             // range = tower.b_maxRange*2;
             //float range =  * 2;
+
+            var hoveringCoords = GridManager.FixCoordinates(Input.mousePosition);
+            rangePreview.transform.position = new Vector3(hoveringCoords.x, hoveringCoords.y, rangePreview.transform.position.z);
+            
             rangePreview.SetStat(tower.MaxRange);
             //rangePreview.transform.localScale = Vector3.one * range;
             rangePreview.gameObject.SetActive(true);

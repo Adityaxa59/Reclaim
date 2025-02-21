@@ -58,6 +58,7 @@ namespace Giacomo
 
 
         public static Vector2Int FixCoordinates(Vector2 position) => new Vector2Int(Mathf.RoundToInt(position.x), Mathf.RoundToInt(position.y));
+        public static Vector2Int FixCoordinates(Vector3 position) => new Vector2Int(Mathf.RoundToInt(position.x), Mathf.RoundToInt(position.y));
         public Tile Get(Vector3 position) => Get(FixCoordinates(position));
         public Tile Get(Vector2Int position)
         {

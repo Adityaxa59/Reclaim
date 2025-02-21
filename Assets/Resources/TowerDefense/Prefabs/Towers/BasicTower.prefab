@@ -94,7 +94,7 @@ MonoBehaviour:
     m_maxValue: 3.4028235e+38
   Damage:
     m_name: 
-    m_baseValue: 10
+    m_baseValue: 15
     min: 1
     max: 0
     tempMin: 0
