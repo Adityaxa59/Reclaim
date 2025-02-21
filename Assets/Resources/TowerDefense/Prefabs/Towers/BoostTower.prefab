@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sortOrder: 0
   effects: {fileID: 0}
-  shopIcon: {fileID: 5045188630873096290, guid: 8901a8cc285876e48b882143dec27bd8, type: 3}
+  shopIcon: {fileID: -452126304, guid: 58437be6c97c11b4c938fc8f5c4cdf84, type: 3}
   towerName: Boost
   towerDescription: Boosts the range and attack speed of adjacent towers.
   Cost:
@@ -238,7 +238,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6240774322279812042}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -275,15 +275,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 2024558033217508813, guid: c99976373a4233e42aef01bed929c257, type: 3}
+  m_Sprite: {fileID: -452126304, guid: 58437be6c97c11b4c938fc8f5c4cdf84, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.2, y: 0.4}
+  m_Size: {x: 0.75, y: 0.75}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &7194890482863598931
@@ -308,15 +308,13 @@ MonoBehaviour:
   m_AlphaCutoff: 0.1
   m_ApplyToSortingLayers: 0000000085e95a79
   m_ShapePath:
-  - {x: -0.091516614, y: -0.09396314, z: 0}
-  - {x: -0.10177964, y: 0.06165479, z: 0}
-  - {x: -0.035918593, y: 0.10290078, z: 0}
-  - {x: -0.050694764, y: 0.28146872, z: 0}
-  - {x: 0.05237043, y: 0.28266484, z: 0}
-  - {x: 0.03627467, y: 0.101906225, z: 0}
-  - {x: 0.10016477, y: 0.06902502, z: 0}
-  - {x: 0.09211016, y: -0.09454849, z: 0}
-  m_ShapePathHash: 1784077685
+  - {x: -0.00004182197, y: 0.14108977, z: 0}
+  - {x: -0.1756779, y: -0.03115396, z: 0}
+  - {x: -0.21811023, y: -0.00014404953, z: 0}
+  - {x: -0.00048362464, y: 0.21877505, z: 0}
+  - {x: 0.21896628, y: -0.0053571835, z: 0}
+  - {x: 0.17224853, y: -0.0325028, z: 0}
+  m_ShapePathHash: -1278096330
   m_InstanceId: 31314
   m_ShadowShape2DComponent: {fileID: 0}
   m_ShadowShape2DProvider:
@@ -325,8 +323,8 @@ MonoBehaviour:
   m_ShadowMesh:
     m_Mesh: {fileID: 0}
     m_LocalBounds:
-      m_Center: {x: -0.0008074343, y: 0.09405817, z: 0}
-      m_Extent: {x: 0.100972205, y: 0.18860666, z: 0}
+      m_Center: {x: 0.00042802095, y: 0.09313613, z: 0}
+      m_Extent: {x: 0.21853825, y: 0.12563893, z: 0}
     m_EdgeProcessing: 1
     m_TrimEdge: 0
     m_FlipX: 0
@@ -349,7 +347,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6240774322279812042}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 36c28bc606245e44ab2c175062847fd2, type: 3}
   m_Name: 
@@ -432,14 +430,14 @@ SpriteRenderer:
   m_SortingLayerID: -723450557
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 5045188630873096290, guid: 8901a8cc285876e48b882143dec27bd8, type: 3}
+  m_Sprite: {fileID: -1926583292, guid: 58437be6c97c11b4c938fc8f5c4cdf84, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.8, y: 0.8}
+  m_Size: {x: 0.75, y: 0.75}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0

@@ -70,12 +70,11 @@ namespace Giacomo
             maxRangeIndicator = Instantiate(Resources.Load("TowerDefense/Prefabs/RangePreview"), transform).GetComponent<ScaleWithStat>();
             maxRangeIndicator.multiply = 2;
             maxRangeIndicator.SetStat(MaxRange);
+            maxRangeIndicator.gameObject.SetActive(false);
             
             minRangeIndicator = Instantiate(Resources.Load("TowerDefense/Prefabs/RangePreview"), transform).GetComponent<ScaleWithStat>();
             minRangeIndicator.multiply = 2;
-            minRangeIndicator.SetStat(MaxRange);
-            
-            maxRangeIndicator.gameObject.SetActive(false);
+            minRangeIndicator.SetStat(MinRange);
             minRangeIndicator.gameObject.SetActive(false);
         }
 

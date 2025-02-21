@@ -204,7 +204,9 @@ namespace Giacomo
             Value = newVal;
 
             if (previousValue != newVal)
+            {
                 OnValueChanged?.Invoke(new StatValueChangedEventArgs(previousValue, newVal));
+            }
         }
 
         public class StatValueChangedEventArgs

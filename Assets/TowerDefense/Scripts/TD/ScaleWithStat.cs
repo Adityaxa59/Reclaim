@@ -13,24 +13,39 @@ namespace Giacomo
 
         void OnEnable()
         {
+            if(stat != null)
+                stat.OnValueChanged += StatChanged;
+
             if (stat == null && statObject && !statName.IsNullOrWhitespace())
             {
                 var s = statObject.GetComponent<IStatObject>().GetStats()[statName];
                 SetStat(s);
             }
-            UpdateScale(null);
+
+            UpdateScale();
+        }
+        private void OnDisable()
+        {
+            if (stat != null)
+                stat.OnValueChanged -= StatChanged;
         }
 
         public void SetStat(Stat stat)
         {
             if (this.stat != null)
-                this.stat.OnValueChanged -= UpdateScale;
+                this.stat.OnValueChanged -= StatChanged;
 
             this.stat = stat;
-            this.stat.OnValueChanged += UpdateScale;
+            stat.OnValueChanged += StatChanged;
+            UpdateScale();
         }
 
-        void UpdateScale(Stat.StatValueChangedEventArgs args)
+        void StatChanged(Stat.StatValueChangedEventArgs args)
+        {
+            UpdateScale();
+        }
+
+        void UpdateScale()
         {
             if(stat == null)
             {
@@ -41,10 +56,5 @@ namespace Giacomo
             transform.localScale = Vector3.one * (stat + offset) * multiply;
         }
 
-        private void OnDisable()
-        {
-            if (stat != null)
-                stat.OnValueChanged -= UpdateScale;
-        }
     }
 }
