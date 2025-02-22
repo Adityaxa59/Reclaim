@@ -109,3 +109,4 @@ MonoBehaviour:
   hitSoundEffect: 
   hitSoundVolume: 0
   impactEffect: {fileID: 5843257056288207269, guid: e40f0480a8c527448968436fbb023aff, type: 3}
+  impactColor: {r: 0.7607843, g: 0.38039216, b: 0.43529412, a: 0.25490198}

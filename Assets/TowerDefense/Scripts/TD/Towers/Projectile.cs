@@ -7,21 +7,22 @@ namespace Giacomo
 {
     public class Projectile : MonoBehaviour
     {
-        [DisableContextMenu] public float damage;
-        [DisableInEditorMode] public float speed;
-        [DisableInEditorMode] public float lifetime;
-        [DisableInEditorMode] public float splashArea;
-        [DisableInEditorMode] public Targetable target;
-        [DisableInEditorMode] public bool destroyIfTargetDied;
+        [DisableInEditorMode, SerializeField] private float damage;
+        [DisableInEditorMode, SerializeField] private float speed;
+        [DisableInEditorMode, SerializeField] private float lifetime;
+        [DisableInEditorMode, SerializeField] private float splashArea;
+        [DisableInEditorMode, SerializeField] private Targetable target;
+        [DisableInEditorMode, SerializeField] private bool destroyIfTargetDied;
 
-        public string hitSoundEffect = "";
-        public float hitSoundVolume;
+        [SerializeField] string hitSoundEffect = "";
+        [SerializeField] float hitSoundVolume = 1;
 
-        public GameObject impactEffect;
+        [SerializeField] GameObject impactEffect;
+        [SerializeField] private Color impactColor;
 
         protected Vector3 lastTargetPosition;
         private bool isInitialized;
-        public void Initialize(float damage, float speed, float lifetime, float splashArea, Targetable target, bool destroyIfTargetDied, string hitSoundEffect = null, float hitSoundVolume = 0.5f)
+        public void Initialize(float damage, float speed, float lifetime, float splashArea, Targetable target, bool destroyIfTargetDied, string hitSoundEffect = null, float hitSoundVolume = -1f)
         {
             isInitialized = true;
             this.damage = damage;
@@ -34,7 +35,8 @@ namespace Giacomo
 
             if (!string.IsNullOrEmpty(hitSoundEffect))
                 this.hitSoundEffect = hitSoundEffect;
-            this.hitSoundVolume = hitSoundVolume;
+            if(hitSoundVolume != -1)
+                this.hitSoundVolume = hitSoundVolume;
         }
 
         private float despawnTime;
@@ -92,8 +94,11 @@ namespace Giacomo
         protected void TargetHit()
         {
             GameObject impactGO = null;
-            if(impactEffect)
+            if (impactEffect)
+            {
                 impactGO = Instantiate(impactEffect, transform.position, transform.rotation);
+                impactGO.GetComponent<ImpactEffect>()?.SetColor(impactColor);
+            }
             Destroy(impactGO, .2f);
 
             var pitch = new AudioParams.Pitch(AudioParams.Pitch.Variation.Medium);

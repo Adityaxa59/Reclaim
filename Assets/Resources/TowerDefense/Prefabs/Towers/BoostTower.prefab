@@ -79,18 +79,18 @@ MonoBehaviour:
     tempMax: 0
     m_minValue: 0
     m_maxValue: 0
-  placeSoundVolume: 0.5
+  placeSoundVolume: 0.399
   modifierName: attackSpeedBoostTower
   buffs:
   - stat: attackSpeed
     add: 0
-    multiply: 1.5
+    multiply: 1.4
   - stat: maxRange
     add: 0
-    multiply: 1.5
+    multiply: 1.4
   - stat: minRange
     add: 0
-    multiply: 1.5
+    multiply: 1.4
 --- !u!61 &-3641711824607459403
 BoxCollider2D:
   m_ObjectHideFlags: 0

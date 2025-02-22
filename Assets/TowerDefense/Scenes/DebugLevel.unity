@@ -29769,6 +29769,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3557789748575763071, guid: 65fef5b313fe4d942a9e3e8c2afc29a8, type: 3}
+      propertyPath: multiplyHpPerWave
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3557789748575763071, guid: 65fef5b313fe4d942a9e3e8c2afc29a8, type: 3}
+      propertyPath: waves.Array.data[0].amount
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7581355256065077107, guid: 65fef5b313fe4d942a9e3e8c2afc29a8, type: 3}
       propertyPath: m_Name
       value: Portal

@@ -22,6 +22,12 @@ namespace Giacomo
         protected void UpdateBorders()
         {
             var neighbours = GridManager.Instance.GetAdjacentTiles(position);
+
+            leftBorder.SetActive(true);
+            rightBorder.SetActive(true);
+            upBorder.SetActive(true);
+            downBorder.SetActive(true);
+
             foreach (var neighbor in neighbours)
             {
                 if (!neighbor.type.Equals(type))

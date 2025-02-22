@@ -34,7 +34,8 @@ namespace Giacomo
 
         private void OnDestroy()
         {
-            GridManager.Instance?.Remove(position);
+            if(GridManager.Instance && GridManager.Instance.Contains(this))
+                GridManager.Instance.Remove(this);
         }
 
 
@@ -57,10 +58,7 @@ namespace Giacomo
                 Mathf.RoundToInt(transform.position.y));
 
             if (GridManager.Instance.Contains(position))
-            {
-                Debug.Log($"[{position.x}, {position.y}] Tile is occupied!");
                 return;
-            }
 
             transform.position = new Vector3(position.x, position.y, transform.position.z);
 

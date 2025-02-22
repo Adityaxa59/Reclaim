@@ -82,12 +82,14 @@ namespace Giacomo
         {
             maxRangeIndicator.gameObject.SetActive(true);
             minRangeIndicator.gameObject.SetActive(true);
+            DisplayInfoUI.Instance.Show(this, shopIcon, towerName, towerDescription);
         }
 
         protected override void OnCursorExit()
         {
             maxRangeIndicator.gameObject.SetActive(false);
             minRangeIndicator.gameObject.SetActive(false);
+            DisplayInfoUI.Instance.Hide(this);
         }
 
         protected override void OnCursorSelectStart()
