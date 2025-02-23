@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Giacomo
@@ -25,16 +26,23 @@ namespace Giacomo
             
             movement = GetComponent<FollowPathMovement>();
             Vector2 positionOffset = new Vector2(
-                Random.Range(-maxPositionOffset, maxPositionOffset),
-                Random.Range(-maxPositionOffset, maxPositionOffset));
+                UnityEngine.Random.Range(-maxPositionOffset, maxPositionOffset),
+                UnityEngine.Random.Range(-maxPositionOffset, maxPositionOffset));
             movement.SetPositionOffset(positionOffset);
-            movement.SetDestination(GridManager.Instance.GetHome());
-            movement.OnArrive += ReachedHomeTile;
-            if (movement.path?.Count <= 1)
-                Debug.LogError($"Path not found ({name})", gameObject);
+
+            UpdateDestination();
 
             GameManager.AddEnemy(this);
         }
+
+        public void UpdateDestination()
+        {
+            movement.SetDestinationCriteria((Tile t) => t.isHome);
+            movement.OnArrive += ReachedHomeTile;
+            if (movement.path?.Count <= 1)
+                Debug.LogError($"Path not found ({name})", gameObject);
+        }
+
 
         public override Stats GetStats()
         {

@@ -22,6 +22,18 @@ public class LevelEditor : Singleton<LevelEditor>
 
     public void Update()
     {
+        if(Input.GetKeyDown(KeyCode.T))
+        {
+            var tiles = GridManager.Instance.GetAll();
+
+            foreach(var t in tiles)
+            {
+                if (t.Key != t.Value.position)
+                    Debug.Log(t.Key + " " + t.Value.position);
+            }
+        }
+
+
         //get current tile
         var mousePos = Helpers.Camera.ScreenToWorldPoint(Input.mousePosition);
         var intCoords = GridManager.FixCoordinates(mousePos);
@@ -50,7 +62,9 @@ public class LevelEditor : Singleton<LevelEditor>
             if(!GridManager.Instance.Contains(placingTile))
                 GridManager.Instance.AddTile(intCoords, placingTile);
 
-            SetPlacingTile(placingTile.gameObject);
+            var t = placingTile;
+            placingTile = null;
+            SetPlacingTile(t.gameObject);
             return;
         }
 
@@ -62,8 +76,6 @@ public class LevelEditor : Singleton<LevelEditor>
             lastHoveredTile = null;
             changedTileAfterPlacing = false;
             lastPlacedCoords = intCoords;
-
-            //GridManager.Instance.Remove();
         }
     }
 
@@ -98,8 +110,28 @@ public class LevelEditor : Singleton<LevelEditor>
     }
 
 
+    public void EnablePreview(bool enabled)
+    {
+        var toEnable = enabled ? placingTile : lastHoveredTile;
+        var toDisable = enabled ? lastHoveredTile : placingTile;
+
+        if (lastHoveredTile)
+        {
+            GridManager.Instance.AddTile(lastHoveredTile.position, lastHoveredTile);
+            lastHoveredTile.gameObject.SetActive(true);
+        }
+        if (GridManager.Instance.Contains(placingTile))
+        {
+            GridManager.Instance.Remove(placingTile);
+
+        }
+    }
+
     public void SetPlacingTile(GameObject t)
     {
+        if(placingTile)
+            Destroy(placingTile.gameObject);
+
         var mousePos = Helpers.Camera.ScreenToWorldPoint(Input.mousePosition);
         var intCoords = GridManager.FixCoordinates(mousePos);
 
@@ -107,5 +139,6 @@ public class LevelEditor : Singleton<LevelEditor>
         placingTile.name = "placing";
         placingTile.gameObject.SetActive(true);
         placingTile.transform.position = new Vector3(intCoords.x, intCoords.y);
+        lastHoveredCoords = Vector2Int.one * int.MaxValue;
     }
 }

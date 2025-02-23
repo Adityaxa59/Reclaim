@@ -1,10 +1,49 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Giacomo
 {
     public class Pathfinder
     {
+        public static List<Tile> FindNearestTile(GridManager grid, Tile startTile, Func<Tile, bool> isDestination)
+        {
+            Dictionary<Tile, PathfinderTile> tileData = new Dictionary<Tile, PathfinderTile>();
+            List<Tile> openSet = new List<Tile>();
+            HashSet<Tile> closedSet = new HashSet<Tile>();
+
+            openSet.Add(startTile);
+            tileData.Add(startTile, new PathfinderTile(startTile, 0, int.MaxValue));
+
+            while (openSet.Count > 0)
+            {
+                PathfinderTile currentTile = tileData[openSet[0]];
+
+                if(isDestination(currentTile.originalTile))
+                    return RetracePath(tileData[startTile], currentTile);
+
+                openSet.Remove(currentTile.originalTile);
+                closedSet.Add(currentTile.originalTile);
+
+                foreach (Tile neighbour in grid.GetAdjacentTiles(currentTile.originalTile.position))
+                {
+                    if (!neighbour || !neighbour.IsWalkable || closedSet.Contains(neighbour))
+                        continue;
+
+                    int newMovementCostToNeighbour = currentTile.gCost + GetDistance(currentTile.originalTile, neighbour);
+
+                    if (!tileData.ContainsKey(neighbour))
+                    {
+                        tileData.Add(neighbour, new PathfinderTile(neighbour, newMovementCostToNeighbour, currentTile.hCost - 1, currentTile));
+                        openSet.Add(neighbour);
+                    }
+                }
+            }
+
+            return closedSet.ToList();
+        }
+
         public static List<Tile> FindPath(GridManager grid, Tile startTile, Tile endTile)
         {
             Dictionary<Tile, PathfinderTile> tileData = new Dictionary<Tile, PathfinderTile>();

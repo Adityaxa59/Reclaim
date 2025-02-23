@@ -5,8 +5,10 @@ using UnityEngine;
 
 namespace Giacomo
 {
+    [System.Serializable]
     public class Tile : MonoBehaviour
     {
+        public string tileId;
         public enum TileType { path, ground, decoration }
 
         public TileType type;
@@ -17,14 +19,24 @@ namespace Giacomo
 
         public Tower tower;
 
-        private void Awake()
+        private bool setupOnEnable;
+
+        private void OnEnable()
         {
-            if(GridManager.Instance.isSetup)
+            if (setupOnEnable)
                 SetupTile();
         }
 
-        protected virtual void SetupTile()
+        public virtual void SetupTile()
         {
+            if (!gameObject.activeInHierarchy)
+            {
+                setupOnEnable = true;
+                return;
+            }
+            setupOnEnable = false;
+
+
             UpdatePosition();
 
             var t = GetComponentInChildren<Tower>();

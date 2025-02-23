@@ -25,6 +25,7 @@ namespace Giacomo
             this.positionOffset = positionOffset;
         }
 
+
         public void SetDestination(Tile destination)
         {
             destinationTile = destination;
@@ -45,14 +46,25 @@ namespace Giacomo
 
             path = Pathfinder.FindPath(GridManager.Instance, CurrentTile, destinationTile);
         
-            if (path == null) 
+            if (path == null || path.Count == 0) 
                 return;
 
             currentTileIndex = 0;
             nextTargetPosition = path[0].transform.position + positionOffset;
         }
-    
 
+        public void SetDestinationCriteria(Func<Tile, bool> criteria)
+        {
+            path = Pathfinder.FindNearestTile(GridManager.Instance, CurrentTile, criteria);
+            
+            if(path == null || path.Count == 0)
+                return;
+
+            currentTileIndex = 0;
+            destinationTile = path[path.Count - 1];
+            nextTargetPosition = path[0].transform.position + positionOffset;
+        }
+        
         public void Move(float amount)
         {
             if (path == null)

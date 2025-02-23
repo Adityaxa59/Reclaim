@@ -1,4 +1,5 @@
 using Sirenix.OdinInspector;
+using Sirenix.OdinInspector.Editor.Validation;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -9,13 +10,12 @@ namespace Giacomo
     {
         [ShowInInspector] Dictionary<Vector2Int, Tile> tiles;
 
-        public bool isSetup {  get; protected set; }
         protected void Awake()
         {
-            if (isSetup) return;
             tiles = new Dictionary<Vector2Int, Tile>();
-            BroadcastMessage("SetupTile");
-            isSetup = true;
+            var allTiles = FindObjectsByType<Tile>(FindObjectsSortMode.None);
+            foreach (var t in allTiles)
+                t.SetupTile();
         }
 
 
@@ -52,11 +52,9 @@ namespace Giacomo
             return neighbors;
         }
 
-        public Tile GetHome()
+        public List<Tile> GetHomes()
         {
-            if (!isSetup)
-                Awake();
-            return tiles.FirstOrDefault(x => x.Value.isHome).Value;
+            return tiles.Where(x => x.Value.isHome).Select(x => x.Value).ToList();
         }
 
 
@@ -84,6 +82,15 @@ namespace Giacomo
             GetAdjacentTiles(position).ForEach(x=>x.OnNearbyTileChanged());
         }
 
+        public void Clear()
+        {
+            while (tiles.Count > 0)
+            {
+                var t = tiles.First().Value;
+                Remove(t);
+                Destroy(t.gameObject);
+            }
+        }
 
         public bool Contains(Vector2Int position) => tiles.ContainsKey(position);
         public bool Contains(Tile tile) => tiles.ContainsValue(tile);
