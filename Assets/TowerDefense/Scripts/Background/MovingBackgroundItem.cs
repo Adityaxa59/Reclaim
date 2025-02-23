@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BackgroundItem : MonoBehaviour
+public class BackgroundItem : ManagedBehaviour
 {
     [SerializeField] SpriteRenderer icon;
 
@@ -11,7 +11,7 @@ public class BackgroundItem : MonoBehaviour
 
     public float colorMaxDist = 10;
 
-    private void Update()
+    public override void ManagedUpdate()
     {
         var cursorPos = Helpers.Camera.ScreenToWorldPoint(Input.mousePosition);
         cursorPos.z = transform.position.z;

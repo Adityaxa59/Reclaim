@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using Sirenix.Utilities;
 
 namespace Giacomo
 {
@@ -22,13 +23,14 @@ namespace Giacomo
         public event Action<int> SpawningNewWave;
         public event Action FinishedSpawningWave;
 
-        protected Spawner[] spawners;
+        protected List<Spawner> spawners;
         protected bool gameStarted;
 
         private void Start()
         {
-            spawners = FindObjectsByType<Spawner>(FindObjectsInactive.Include, FindObjectsSortMode.None);
             StartGame();
+            GridManager.Instance.OnTileAdded += t => { if (t.tileId == "spawner") spawners.Add(t.GetComponent<Spawner>()); };
+            GridManager.Instance.OnTileRemoved += p => { spawners.RemoveAll(x => x.GetComponent<Tile>().position == p); };
         }
 
 
@@ -36,6 +38,7 @@ namespace Giacomo
         {
             if (gameStarted) return;
             gameStarted = true;
+            spawners = FindObjectsByType<Spawner>(FindObjectsInactive.Include, FindObjectsSortMode.None).ToList();
 
             StartCoroutine(SpawnWaves());
         }

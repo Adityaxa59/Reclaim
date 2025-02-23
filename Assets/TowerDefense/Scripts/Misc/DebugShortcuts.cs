@@ -10,6 +10,15 @@ public class DebugShortcuts : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.LeftShift))
         {
+            if (Input.GetKeyDown(KeyCode.F1))
+                SceneManager.LoadScene("LoadableLevel");
+            
+            if (Input.GetKeyDown(KeyCode.F2))
+                SceneManager.LoadScene("LevelEditor");
+
+            if (Input.GetKeyDown(KeyCode.F11))
+                Screen.fullScreen = !Screen.fullScreen;
+
             if (Input.GetKeyDown(KeyCode.M))
             {
                 GameStats.Instance?.ModifyCoins(1000);

@@ -492,7 +492,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &357631587
 Transform:
   m_ObjectHideFlags: 0
@@ -521,7 +521,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   iconPrefab: {fileID: 3780917913700909614, guid: 0564d046a90109f4c9589d5d91c66f15, type: 3}
-  distance: 1
   offset: {x: 0.5, y: 0.5}
   ignoreTiles: []
   size: {x: 48, y: 32}

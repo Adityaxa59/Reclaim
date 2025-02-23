@@ -1,5 +1,6 @@
 using Sirenix.OdinInspector;
 using Sirenix.OdinInspector.Editor.Validation;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -9,6 +10,8 @@ namespace Giacomo
     public class GridManager : Singleton<GridManager>
     {
         [ShowInInspector] Dictionary<Vector2Int, Tile> tiles;
+        public Action<Tile> OnTileAdded;
+        public Action<Vector2Int> OnTileRemoved;
 
         protected void Awake()
         {
@@ -18,7 +21,7 @@ namespace Giacomo
                 t.SetupTile();
         }
 
-
+        
         public void AddTile(Vector2Int position, Tile tile)
         {
             if (tiles.ContainsKey(position))
@@ -34,6 +37,7 @@ namespace Giacomo
 
             tile.OnNearbyTileChanged();
             GetAdjacentTiles(position).ForEach(x=>x.OnNearbyTileChanged());
+            OnTileAdded?.Invoke(tile);
         }
 
         public List<Tile> GetAdjacentTiles(Vector2Int position)
@@ -71,15 +75,12 @@ namespace Giacomo
         public Dictionary<Vector2Int, Tile> GetAll() => tiles;
 
         public void Remove(Tile tile)
-        {
-            var tilePosition = tiles.FirstOrDefault(x => x.Value == tile).Key;
-            tiles.Remove(tilePosition);
-            GetAdjacentTiles(tilePosition).ForEach(x=>x.OnNearbyTileChanged());
-        }
+            => Remove(tiles.FirstOrDefault(x => x.Value == tile).Key);
         public void Remove(Vector2Int position)
         {
             tiles.Remove(position);
             GetAdjacentTiles(position).ForEach(x=>x.OnNearbyTileChanged());
+            OnTileRemoved?.Invoke(position);
         }
 
         public void Clear()

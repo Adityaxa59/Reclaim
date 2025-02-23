@@ -7,16 +7,17 @@ using UnityEngine;
 public class BGIconSpawner : MonoBehaviour
 {
     [SerializeField] protected GameObject iconPrefab;
-    [SerializeField] protected float distance = 4;
     [SerializeField] protected Vector2 offset;
     [SerializeField] protected List<Vector2Int> ignoreTiles;
     [SerializeField] protected Vector2Int size;
+    [SerializeField] protected Dictionary<Vector2Int, GameObject> grid = new();
 
     void Start()
     {
         SpawnTiles();
     }
 
+    
 
     protected virtual void SpawnTiles()
     {
@@ -25,10 +26,13 @@ public class BGIconSpawner : MonoBehaviour
         {
             for (int y = -size.y / 2; y < size.y / 2; y++)
             {
-                Vector3 spawnPos = new Vector3(x * distance + offset.x, y * distance + offset.y, 0);
+                Vector3 spawnPos = new Vector3(x + offset.x, y + offset.y, 0);
                 p = new Vector2Int(x, y);
                 if (!ignoreTiles.Contains(p))
-                    Instantiate(iconPrefab, spawnPos, Quaternion.identity, transform);
+                {
+                    var go = Instantiate(iconPrefab, spawnPos, Quaternion.identity, transform);
+                    grid.Add(p, go);
+                }
             }
         }
 
