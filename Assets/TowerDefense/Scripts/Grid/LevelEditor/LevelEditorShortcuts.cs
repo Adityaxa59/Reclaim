@@ -1,8 +1,7 @@
 using Giacomo;
 using UnityEngine;
 using System.Collections.Generic;
-using Sirenix.Utilities;
-using UnityEditor;
+using SFB;
 
 public class LevelEditorShortcuts : MonoBehaviour
 {
@@ -24,30 +23,22 @@ public class LevelEditorShortcuts : MonoBehaviour
         //Ctrl+S > Save
         if(Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.S))
         {
-            var path = EditorUtility.SaveFilePanel(
-                title:      "Save level",
-                directory:  "",
-                defaultName:"level.td",
-                extension:  "td");
+            var path = StandaloneFileBrowser.SaveFilePanel("Save Level", "", "level", "td");
 
             if (path.Length != 0)
-            {
                 GridImportExport.ExportGrid(GridManager.Instance, path);
-            }
         }
         
         //Ctrl+L > Load level
         if(Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.L))
         {
-            var path = EditorUtility.OpenFilePanel(
-                title:      "Load level",
-                directory:  "",
-                extension:  "td");
+            string[] paths = StandaloneFileBrowser.OpenFilePanel("Load Level", "", "td", false);
+
+            if(paths.Length <= 0) return;
+            string path = paths[0];
 
             if (path.Length != 0)
-            {
                 GridImportExport.ImportGrid(GridManager.Instance, path);
-            }
         }
 
         if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.LeftControl))
